@@ -1,7 +1,7 @@
 //RNBC
 import { Image, View } from 'react-native';
 
-import { Logo } from '../../assets/Logo.png';
+import { LogoImg } from '../../assets/Logo.png';
 
 import { styles } from './styles';
 
@@ -10,7 +10,7 @@ export function Header() {
     <View style={styles.container}>
         <Image
             source={require('../../assets/Logo.png')}
-            // source={Logo}
+            // source={LogoImg}
             style={styles.logo}
         />
     </View>

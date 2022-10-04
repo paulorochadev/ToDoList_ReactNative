@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
         color: '#808080',
         padding: 15,
-        textDecorationLine: 'line-through'
+        textDecorationLine: 'line-through',
     },
     taskText: {
         alignSelf: 'center',

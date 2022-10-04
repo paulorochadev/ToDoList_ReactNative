@@ -3,6 +3,8 @@ import React, { useContext, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import CheckBox from 'expo-checkbox';
 
+import { TrashImg } from '../../assets/trash.png';
+
 import { styles } from './styles';
 
 import { CheckedContext } from "../../contexts/checkedContext";
@@ -37,6 +39,7 @@ export function Task({ taskContent, onRemove, countRemoveTask }: Props){
                 onPressIn={ countRemoveTask }
             >
                 <Image
+                    // source={TrashImg}
                     source={ require('../../assets/trash.png') }
                     style={ styles.trashButtonImage }
                 />

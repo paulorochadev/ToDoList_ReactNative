@@ -78,6 +78,7 @@ export function Home() {
                 </TouchableOpacity>
             </View>
 
+            {/* CountStatus */}
             <View style={ styles.status }>
                 <Text style={ styles.textCreate }>
                     Criadas
@@ -97,7 +98,7 @@ export function Home() {
                 </View>
             </View>
 
-            <View style={ styles.hrLine } />
+            {/* <View style={ styles.hrLine } /> */}
 
             <FlatList
                 data={ tasks }
@@ -112,6 +113,7 @@ export function Home() {
                 ListEmptyComponent={() => (
                     <>
                         <View style={ styles.hrLine } />
+                        
                         <Image
                             source={ require('../../assets/Clipboard.png') }
                             style={ styles.listEmptyImg }
