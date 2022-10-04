@@ -4,6 +4,8 @@ import { Alert, FlatList, Image, Text, TextInput, TouchableOpacity, View } from 
 
 import { CheckedContext } from '../../contexts/checkedContext';
 
+import { Task } from '../../components/Task';
+
 import { styles } from './styles';
 
 
@@ -54,48 +56,76 @@ export function Home() {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={ styles.container }>
             
-            <View style={styles.form}>
+            <View style={ styles.form }>
                 <TextInput
-                    style={styles.input}
-                    placeholder='Adicione uma nova tarefa'
-                    placeholderTextColor='#6B6B6B'
-                    onChangeText={setTaskText}
-                    value={taskText}
+                    style={ styles.input }
+                    placeholder= 'Adicione uma nova tarefa'
+                    placeholderTextColor= '#6B6B6B'
+                    onChangeText={ setTaskText }
+                    value={ taskText }
                 />
 
                 <TouchableOpacity
-                    style={styles.button}
-                    onPress={handleTaskAdd}
-                    onPressIn={countCreateTask}
+                    style={ styles.button }
+                    onPress={ handleTaskAdd }
+                    onPressIn={ countCreateTask }
                 >
-                    <Text style={styles.buttonText}>
+                    <Text style={ styles.buttonText }>
                         +
                     </Text>
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.status}>
-                <Text style={styles.textCreate}>
+            <View style={ styles.status }>
+                <Text style={ styles.textCreate }>
                     Criadas
                 </Text>
-                <View style={styles.countStatus}>
-                    <Text style={styles.textCount}>
-                        {countCreate}
+                <View style={ styles.countStatus }>
+                    <Text style={ styles.textCount }>
+                        { countCreate }
                     </Text>
                 </View>
-                <Text style={styles.textFinish}>
+                <Text style={ styles.textFinish }>
                     Concluídas
                 </Text>
-                <View style={styles.countStatus}>
-                    <Text style={styles.textCount}>
-                        {countChecked}
+                <View style={ styles.countStatus }>
+                    <Text style={ styles.textCount }>
+                        { countChecked }
                     </Text>
                 </View>
             </View>
 
-            <View style={styles.hrLine} />
+            <View style={ styles.hrLine } />
+
+            <FlatList
+                data={ task }
+                keyExtractor={ item => item }
+                renderItem={({ item }) => (
+                    <Task 
+                        taskContent={ item }
+                        onRemove={ () => handleTaskRemove(item) }
+                        countRemoveTask={ countRemoveTask }
+                    />
+                )}
+                ListEmptyComponent={() => (
+                    <>
+                        <View style={ styles.hrLine } />
+                        <Image
+                            source={ require('../../../assets/Clipboard.png') }
+                            style={ styles.listEmptyImg }
+                        />
+
+                        <Text style={ styles.listEmptyTextUpper }>
+                            Você ainda não tem tarefas cadastradas
+                        </Text>
+                        <Text style={ styles.listEmptyTextDown }>
+                            Crie tarefas e organize seus itens a fazer
+                        </Text>
+                    </>
+                )}
+            />
 
         </View>
     );
