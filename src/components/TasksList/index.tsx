@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { styles } from './styles';
 
-export function TodoInput() {
+export function TasksList() {
   return (
     <View style={styles.container}>
 
