@@ -100,7 +100,7 @@ export function Home() {
             <View style={ styles.hrLine } />
 
             <FlatList
-                data={ task }
+                data={ tasks }
                 keyExtractor={ item => item }
                 renderItem={({ item }) => (
                     <Task 
@@ -113,12 +113,12 @@ export function Home() {
                     <>
                         <View style={ styles.hrLine } />
                         <Image
-                            source={ require('../../../assets/Clipboard.png') }
+                            source={ require('../../assets/Clipboard.png') }
                             style={ styles.listEmptyImg }
                         />
 
                         <Text style={ styles.listEmptyTextUpper }>
-                            Você ainda não tem tarefas cadastradas
+                            Você ainda não tem tarefas cadastradas!
                         </Text>
                         <Text style={ styles.listEmptyTextDown }>
                             Crie tarefas e organize seus itens a fazer

@@ -27,9 +27,8 @@ export function CheckedProvider({ children }: CheckedProviderProps){
     }
 
     return (
-        <CheckedContext.Provider value={{isChecked, setChecked, countFinishedTask, countChecked}}>
-            {children}
+        <CheckedContext.Provider value={{ isChecked, setChecked, countFinishedTask, countChecked }}>
+            { children }
         </CheckedContext.Provider>
     )
-
 }

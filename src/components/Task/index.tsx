@@ -14,7 +14,7 @@ type Props = {
 }
 
 export function Task({ taskContent, onRemove, countRemoveTask }: Props){
-    const { countFinishedTask, isChecked, setChecked } = useContext(CheckedContextContext)
+    const { countFinishedTask, isChecked, setChecked } = useContext(CheckedContext)
 
     return (
         <View style={ styles.taskBox }>
@@ -37,10 +37,10 @@ export function Task({ taskContent, onRemove, countRemoveTask }: Props){
                 onPressIn={ countRemoveTask }
             >
                 <Image
-                    source={ require('../../../assets/trash.png') }
+                    source={ require('../../assets/trash.png') }
                     style={ styles.trashButtonImage }
                 />
-            </TouchableOpacity>        
+            </TouchableOpacity>
         </View>
     );
 }

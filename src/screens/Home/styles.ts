@@ -2,6 +2,8 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+
+  //Header
   container: {
     backgroundColor: '#1A1A1A',
     flex: 1,
@@ -45,7 +47,7 @@ export const styles = StyleSheet.create({
     fontSize: 24,
   },
 
-
+  //CountStatus
   status: {
     flexDirection: 'row',
     marginTop: 15,
@@ -83,6 +85,25 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1.5,
     marginTop: 10,
     width: 360,
+  },
+
+
+  //FlatList
+  listEmptyImg: {
+    alignSelf: 'center',
+    marginTop: 50,
+  },
+  listEmptyTextUpper: {
+    color: '#333333',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 20,
+    textAlign: 'center',
+  },
+  listEmptyTextDown: {
+    color: '#333333',
+    fontSize: 14,
+    textAlign: 'center',
   },
 
 });
