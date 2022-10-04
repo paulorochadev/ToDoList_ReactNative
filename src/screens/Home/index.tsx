@@ -2,6 +2,8 @@
 import React, { useContext, useState } from 'react';
 import { Alert, FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
+import { CheckedContext } from '../../contexts/CheckedContext';
+
 import { styles } from './styles';
 
 
@@ -10,6 +12,8 @@ let countCreate = 0;
 export function Home() {
     const [tasks, setTasks] = useState<string[]>([]);
     const [taskText, setTaskText] = useState('');
+
+    const { countChecked } = useContext(CheckedContext)
 
     function countCreateTask(){
         countCreate = countCreate + 1;
@@ -69,6 +73,25 @@ export function Home() {
                         +
                     </Text>
                 </TouchableOpacity>
+            </View>
+
+            <View style={styles.countStatus}>
+                <Text style={styles.textCreate}>
+                    Criadas
+                </Text>
+                <View style={styles.statusCreate}>
+                    <Text style={styles.countStatusCreate}>
+                        {countCreate}
+                    </Text>
+                </View>
+                <Text style={styles.textFinish}>
+                    Concluídas
+                </Text>
+                <View style={styles.statusFinish}>
+                    <Text style={styles.countStatusFinish}>
+                        {countChecked}
+                    </Text>
+                </View>
             </View>
 
         </View>
