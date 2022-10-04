@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { Alert, FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-import { CheckedContext } from '../../contexts/CheckedContext';
+import { CheckedContext } from '../../contexts/checkedContext';
 
 import { styles } from './styles';
 
@@ -59,8 +59,8 @@ export function Home() {
             <View style={styles.form}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Adicione uma nova tarefa"
-                    placeholderTextColor="#6B6B6B"
+                    placeholder='Adicione uma nova tarefa'
+                    placeholderTextColor='#6B6B6B'
                     onChangeText={setTaskText}
                     value={taskText}
                 />
@@ -68,6 +68,7 @@ export function Home() {
                 <TouchableOpacity
                     style={styles.button}
                     onPress={handleTaskAdd}
+                    onPressIn={countCreateTask}
                 >
                     <Text style={styles.buttonText}>
                         +
@@ -75,24 +76,26 @@ export function Home() {
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.countStatus}>
+            <View style={styles.status}>
                 <Text style={styles.textCreate}>
                     Criadas
                 </Text>
-                <View style={styles.statusCreate}>
-                    <Text style={styles.countStatusCreate}>
+                <View style={styles.countStatus}>
+                    <Text style={styles.textCount}>
                         {countCreate}
                     </Text>
                 </View>
                 <Text style={styles.textFinish}>
                     Concluídas
                 </Text>
-                <View style={styles.statusFinish}>
-                    <Text style={styles.countStatusFinish}>
+                <View style={styles.countStatus}>
+                    <Text style={styles.textCount}>
                         {countChecked}
                     </Text>
                 </View>
             </View>
+
+            <View style={styles.hrLine} />
 
         </View>
     );

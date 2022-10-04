@@ -45,26 +45,44 @@ export const styles = StyleSheet.create({
     fontSize: 24,
   },
 
-  countStatus: {
 
+  status: {
+    flexDirection: 'row',
+    marginTop: 15,
+    padding: 20,
   },
   textCreate:{
-
+    color: '#4EA8DE',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
-  statusCreate: {
-
+  countStatus: {
+    alignItems: 'center',
+    backgroundColor: '#262626',
+    borderRadius: 8,
+    justifyContent: 'center',
+    marginLeft: 8,
+    width: 25,
   },
-  countStatusCreate: {
-
+  textCount: {
+    color: '#FFF',
+    fontSize: 12,
+    fontWeight: 'bold',
   },
   textFinish: {
-
+    color: '#8284FA',
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginLeft: 175,
   },
-  statusFinish: {
 
-  },
-  countStatusFinish: {
-    
+
+  hrLine: {
+    alignSelf: 'center',
+    borderBottomColor: '#333333',
+    borderBottomWidth: 1.5,
+    marginTop: 10,
+    width: 360,
   },
 
 });
