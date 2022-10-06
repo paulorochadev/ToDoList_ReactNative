@@ -7,12 +7,18 @@ export default function App() {
   return (
     <>
       <StatusBar
+        barStyle='light-content'
+        backgroundColor='#0d0d0d'
+        translucent={false}
+
+        /* ---- VALIDATION ----
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
+        */
       />
       
-      <Header />
+      {/* <Header /> */}
       <Home />
     </>
   );
